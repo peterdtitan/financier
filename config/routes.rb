@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   
   resources :categories, only: %i[index show new create] do
     resources :payments, only: %i[index new create]
