@@ -1,12 +1,14 @@
-<div class="flex flex-col gap-2 px-8 mt-2">
+<div class="flex flex-col gap-4 px-8 mt-2">
   <% @categories.each do |category| %>
-    <div class="p-4 flex justify-between bg-slate-200">
-      <div class="flex gap-2">
-        <img src="<%= category.icon %>" class="h-8 w-8">
-        <h2><%= link_to category.name, category_payments_path(category), class: 'category_link' %></h2>
+    <%= link_to category_payments_path(category), class: 'category_link' do %>
+      <div class="p-4 flex justify-between items-center bg-slate-200 hover:bg-blue-200">
+        <div class="flex gap-4 items-center">
+          <%= image_tag(category.icon, class: "h-16 w-16") if category.icon.attached? %>
+          <h2 class="text-xl font-medium"><%= category.name.upcase %></h2>
+        </div>
+        <p class="text-red-700">$<%= category.total_payments %></p>
       </div>
-      <p class="text-red-700">$<%= category.total_payments %></p>
-    </div>
+    <% end %>
   <% end %>
 </div>
 

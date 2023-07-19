@@ -3,7 +3,7 @@
    <p class="text-red-700">$<%= @category.total_payments %></p>
 </div>
 
-<div id="foods" class="min-w-full flex flex-col items-center justify-center mt-4">
+<div id="foods" class="min-w-full flex flex-col items-center justify-center mt-4 px-8">
     <table class="min-w-full border">
       <thead>
         <tr>
@@ -15,7 +15,7 @@
         <% @payments.each do |payment| %>
           <tr>
             <td class="ml-2 px-6 py-4 border border-gray-200"><%= payment.name %></td>
-            <td class="ml-2 px-6 py-4 border border-gray-200"><%= payment.amount %></td>
+            <td class="ml-2 px-6 py-4 border border-gray-200 text-red-700">$<%= payment.amount %></td>
           </tr>
         <% end %>
       </tbody>
