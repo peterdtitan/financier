@@ -5,6 +5,15 @@
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
 
+      <div class="mt-4 w-full flex gap-12 items-center">
+        <div class="flex gap-2 rounded-full items-center">
+          <img width="64" height="64" src="https://img.icons8.com/puffy/32/experimental-user-puffy.png" alt="experimental-user-puffy" class="rounded-full border-[0.5px] border-black p-2"/>
+          <p class="text-sm">Profile Photo</p>
+        </div>
+        <%= f.file_field :avatar, placeholder: 'Upload Profile Pic', required: true, class: 'w-full' %>
+      </div>
+
+
       <div class="mt-4 w-full">
         <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: 'Full Name', required: true, class: 'w-full' %>
       </div>
@@ -26,12 +35,14 @@
       </div>
 
       <div class="mt-4 w-full">
-        <%= f.submit "Sign up", class: 'w-full bg-emerald-300 hover:bg-emerald-600 cursor-pointer p-2' %>
+        <div class='flex items-center justify-center bg-emerald-300 hover:bg-emerald-600 p-2 cursor-pointer'>
+          <%= f.submit "SIGN UP", class: 'cursor-pointer' %>
+        </div>
       </div>
     <% end %>
   </div>
 
-  <div class="mt-4 w-full px-8">
+  <div class="mt-4 w-full px-8 cursor-pointer">
     <div class='flex items-center justify-center bg-red-300 hover:bg-red-500 p-2 cursor-pointer'>
       <%= render "devise/shared/links" %>
     </div>

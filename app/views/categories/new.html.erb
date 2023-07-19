@@ -1,11 +1,18 @@
-<div>
-   <h2>ADD NEW CATEGORY</h2>
-   <%= link_to categories_path do %>
-   <% end %>
+<div class="flex items-center justify-center w-full bg-blue-200 p-4">
+   <h2 class="text-md text-slate-500 font-medium">ADD NEW CATEGORY</h2>
 </div>
 
-<%= form_with(model: @category, url: categories_path, method: :post, class: '') do |form| %>
-   <%= form.text_field :name, placeholder: 'Name', required: true %>
-    <%= form.text_field :icon, placeholder: 'Icon', required: true %>
-    <%= form.submit "Save", class:'save' %>
-<% end %>
+<div class="flex flex-col gap-4 px-8">
+  <%= form_with(model: @category, url: categories_path, method: :post, class: '') do |form| %>
+     <div class="mt-2">
+       <%= form.text_field :name, placeholder: 'Name', required: true, class: 'w-full' %>
+     <div>
+     <div class="mt-6 gap-2 flex flex-col">
+       <%= form.label :icon %>
+       <%= form.file_field :icon, class: "form-control w-full" %>
+     </div>
+     <button class="flex w-full items-center justify-center mt-10 p-4 bg-emerald-500 text-white font-medium hover:bg-emerald-600">
+      <%= form.submit "SAVE", class: "cursor-pointer" %>
+     </button>
+  <% end %>
+</div>
