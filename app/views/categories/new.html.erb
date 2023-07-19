@@ -1,0 +1,11 @@
+<div>
+   <h2>ADD NEW CATEGORY</h2>
+   <%= link_to categories_path do %>
+   <% end %>
+</div>
+
+<%= form_with(model: @category, url: categories_path, method: :post, class: '') do |form| %>
+   <%= form.text_field :name, placeholder: 'Name', required: true %>
+    <%= form.text_field :icon, placeholder: 'Icon', required: true %>
+    <%= form.submit "Save", class:'save' %>
+<% end %>
