@@ -1,0 +1,20 @@
+<div class="flex items-center justify-center w-full bg-blue-500 p-4">
+   <h2 class="text-2xl text-white">ADD NEW PAYMENT</h2>
+</div>
+
+<div class="flex flex-col w-full px-8">
+  <%= form_with(model: @payment, url: category_payments_path, method: :post, class: 'add-new-form') do |form| %>
+    <div class="mt-2">
+      <%= form.text_field :name, placeholder: 'Name', required: true, class: 'w-full' %>
+    </div>
+    <div class="mt-2">
+      <%= form.text_field :amount, placeholder: 'Amount', required: true, class: 'w-full' %>
+    </div>
+    <div class="mt-2">
+      <%= form.collection_select :category_id, @categories, :id, :name, { include_blank: 'Select category' }, required: true, class: 'w-full'  %>
+    </div>
+    <div class="flex items-center justify-center mt-10 p-4 bg-emerald-500 text-white font-medium">
+      <%= form.submit "SAVE" %>
+    </div>
+  <% end %>
+</div>

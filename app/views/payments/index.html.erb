@@ -1,0 +1,41 @@
+<div class="flex items-center justify-center w-full bg-blue-500 p-4">
+   <h2 class="text-2xl text-white">PAYMENTS</h2>
+</div>
+
+<div>
+<div class="flex justify-between p-4 font-medium bg-slate-200">
+   <h2 class="">TOTAL PAYMENTS</h2>
+   <p class="text-red-700">$<%= @category.total_payments %></p>
+</div>
+
+<%
+=begin%>
+ <div>
+ TODO: Add notice here
+</div> 
+<%
+=end%>
+
+<div id="foods" class="min-w-full flex flex-col items-center justify-center mt-4">
+    <table class="min-w-full border">
+      <thead>
+        <tr>
+          <th class="px-6 py-3 bg-gray-200 text-gray-700 border-b">Name</th>
+          <th class="px-6 py-3 bg-gray-200 text-gray-700 border-b">Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @payments.each do |payment| %>
+          <tr>
+            <td class="ml-2 px-6 py-4 border border-gray-200"><%= payment.name %></td>
+            <td class="ml-2 px-6 py-4 border border-gray-200"><%= payment.amount %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+</div>
+
+<button class="fixed bottom-0 w-full bg-emerald-500 p-4 text-white font-medium text-2xl">
+    <%= link_to 'ADD NEW PAYMENT', new_category_payment_path, class: 'add-new-link'  %>
+</button>
+
