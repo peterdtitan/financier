@@ -13,8 +13,8 @@
     <div class="mt-2">
       <%= form.collection_select :category_id, @categories, :id, :name, { include_blank: 'Select category' }, required: true, class: 'w-full'  %>
     </div>
-    <div class="flex items-center justify-center mt-10 p-4 bg-emerald-500 text-white font-medium">
-      <%= form.submit "SAVE" %>
-    </div>
+    <button class="flex w-full items-center justify-center mt-10 p-4 bg-emerald-500 text-white font-medium hover:bg-emerald-600">
+      <%= form.submit "SAVE", class: "cursor-pointer" %>
+    </button>
   <% end %>
 </div>
