@@ -23,7 +23,7 @@
 # 📖  <a name="financier">**Financier*</a>
    A simple mobile web application where you can manage your budget: you have a list of expenses associated with a category so that you can see how much money you spent and on what. 
    
-   Here is the link to a video presentation of the app: [Financier]()
+   Here is the link to a video presentation of the app: [Financier](https://www.loom.com/share/05328a6640b24e8e92f27e0ebd7bf4e3?sid=23925a41-e2f6-4269-80c7-a62db832aa2a)
    
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -48,7 +48,7 @@
 
  ## 🚀 Live Demo <a name="live-demo"></a>
 
- - [Financier Live Demo]()
+ - [Financier Live Demo](https://financier-zs8b.onrender.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
