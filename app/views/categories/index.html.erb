@@ -1,0 +1,19 @@
+<div class="flex flex-col gap-4 px-8 mt-2">
+  <% @categories.each do |category| %>
+    <%= link_to category_payments_path(category), class: 'category_link' do %>
+      <div class="p-4 flex justify-between items-center bg-slate-200 hover:bg-blue-200">
+        <div class="flex gap-4 items-center">
+          <%= image_tag(category.icon, class: "h-16 w-16") if category.icon.attached? %>
+          <h2 class="text-xl font-medium"><%= category.name.upcase %></h2>
+        </div>
+        <p class="text-red-700">$<%= category.total_payments %></p>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+<footer class="fixed bottom-0 flex justify-center w-full">
+  <button class="w-full bg-emerald-400 hover:bg-emerald-600 p-4 text-white text-xl font-medium">
+    <%= link_to 'ADD NEW CATEGORY', new_category_path %>
+  </button>
+</footer>
